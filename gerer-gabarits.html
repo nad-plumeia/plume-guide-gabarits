@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gérer vos gabarits — Plume IA</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+:root{--blue:#1B5EFF;--blue-l:#EEF3FF;--text:#0F1624;--text2:#4A5568;--muted:#8A96A8;--border:#E2E8F0;--bg:#fff;--sb:#F8FAFC;--tip:#F0F7FF;--sw:220px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;font-size:15px;color:var(--text);background:var(--bg);line-height:1.7;}
+.topnav{position:fixed;top:0;left:0;right:0;height:56px;background:#fff;border-bottom:1px solid var(--border);z-index:100;display:flex;align-items:center;}
+.topnav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1200px;margin:0 auto;padding:0 32px;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--text);text-decoration:none;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{font-size:13px;color:var(--text2);text-decoration:none;font-weight:500;letter-spacing:.03em;text-transform:uppercase;}
+.nav-links a:hover{color:var(--blue);}
+.btn-cx{background:var(--blue);color:#fff;border:none;padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;}
+.layout{display:flex;padding-top:56px;min-height:100vh;}
+.sidebar{width:var(--sw);position:fixed;top:56px;bottom:0;left:0;background:var(--bg);border-right:1px solid var(--border);overflow-y:auto;padding:24px 0;}
+.sb-cat{font-size:13px;font-weight:700;color:var(--text);padding:8px 20px 4px;margin-top:8px;}
+.sidebar a{display:block;padding:5px 20px 5px 24px;font-size:14px;color:var(--text2);text-decoration:none;border-left:2px solid transparent;transition:all .12s;}
+.sidebar a:hover{color:var(--blue);}
+.sidebar a.active{color:var(--blue);font-weight:600;border-left:2px solid var(--blue);}
+.sidebar a.sub{padding-left:36px;font-size:13.5px;}
+.main{margin-left:var(--sw);flex:1;padding:48px 72px;max-width:calc(var(--sw) + 760px + 144px);}
+.bc{font-size:13px;color:var(--muted);margin-bottom:28px;display:flex;gap:6px;}
+.bc a{color:var(--muted);text-decoration:none;}
+.bc a:hover{color:var(--blue);}
+h1{font-size:30px;font-weight:700;letter-spacing:-.02em;margin-bottom:6px;}
+.rule{border:none;border-top:2px solid var(--blue);margin:10px 0 22px;}
+h2{font-size:19px;font-weight:700;margin:36px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+p{color:var(--text2);margin-bottom:14px;}
+hr{border:none;border-top:1px solid var(--border);margin:28px 0;}
+.tip{border-left:3px solid var(--blue);padding:12px 16px;margin:20px 0;font-size:14px;color:var(--text2);background:var(--tip);}
+.tip strong{color:var(--text);}
+.img-ph{background:var(--sb);border:1px dashed var(--border);border-radius:8px;padding:32px 24px;text-align:center;margin:20px 0;color:var(--muted);font-size:13px;}
+.img-ph strong{display:block;color:var(--text2);font-size:14px;margin-bottom:4px;}
+.gif-ph{background:var(--blue-l);border:1px dashed #9DB8FF;border-radius:8px;padding:32px 24px;text-align:center;margin:20px 0;color:var(--muted);font-size:13px;}
+.gif-ph strong{display:block;color:var(--blue);font-size:14px;margin-bottom:4px;}
+ul.plain{list-style:none;margin:10px 0;display:flex;flex-direction:column;gap:6px;}
+ul.plain li{display:flex;gap:8px;font-size:14px;color:var(--text2);}
+ul.plain li::before{content:"·";color:var(--blue);font-weight:700;flex-shrink:0;}
+.steps{margin:16px 0;}
+.step{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;}
+.step-n{min-width:26px;height:26px;border:2px solid var(--blue);color:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-top:2px;flex-shrink:0;}
+.step-c{flex:1;font-size:14px;color:var(--text2);}
+.pnav{display:flex;justify-content:space-between;margin-top:48px;padding-top:20px;border-top:1px solid var(--border);}
+.pnav a{color:var(--blue);text-decoration:none;font-size:14px;display:flex;flex-direction:column;gap:3px;}
+.pnav a:last-child{text-align:right;}
+.nl{font-size:12px;color:var(--muted);}
+.nt{font-weight:600;}
+@media(max-width:768px){.sidebar{display:none;}.main{margin-left:0;padding:24px 20px;}}
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a class="logo" href="index.html">Plume IA</a>
+    <div class="nav-links">
+      <a href="#">Accueil</a><a href="#">Confidentialité</a><a href="#">Ressources</a><a href="#">Tarifs</a><a href="#">Contact</a>
+    </div>
+    <button class="btn-cx">Connexion</button>
+  </div>
+</nav>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sb-cat">Premiers Pas</div>
+  <a href="#">Introduction</a>
+  <a href="#">Interface et navigation</a>
+  <a href="#">Faire sa première note</a>
+  <div class="sb-cat">Fonctionnalités</div>
+  <a href="#">Lexique</a>
+  <a href="#">Gabarits de notes</a>
+  <a href="index.html">Gabarits personnalisés</a>
+  <a href="creer-gabarit.html" class="sub">Créer un gabarit</a>
+  <a href="configuration-generale.html" class="sub">Configuration générale</a>
+  <a href="configuration-section.html" class="sub">Configuration d'une section</a>
+  <a href="gerer-gabarits.html" class="sub active">Gérer vos gabarits</a>
+  <a href="infos-supplementaires.html" class="sub">Informations supplémentaires</a>
+</aside>
+<main class="main">
+  <h1>Gérer vos gabarits personnalisés</h1>
+  <hr class="rule">
+  <p>Modifier, réorganiser et dupliquer vos gabarits depuis la page Gabarits de notes.</p>
+
+  <!-- MODIFIER -->
+  <h2>Modifier un gabarit existant</h2>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div class="step-c">Cliquez sur le gabarit à modifier dans votre liste à gauche.</div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-c">Modifiez directement les sections, le format ou le contenu.</div></div>
+    <div class="step"><div class="step-n">3</div><div class="step-c">Cliquez <strong>Ajouter une section</strong> pour ajouter une section vierge.</div></div>
+    <div class="step"><div class="step-n">4</div><div class="step-c">Pour supprimer une section, cliquez sur l'icône de poubelle rouge à droite de la section.<img src="src/poubelle_rouge.png" alt="Icône poubelle rouge" style="height:30px;vertical-align:middle;"></div></div>
+    <div class="step"><div class="step-n">5</div><div class="step-c">Cliquez <strong>Sauvegarder</strong> pour enregistrer les changements.</div></div>
+  </div>
+
+  <img src="src/ajouter-section_sauvegarder.png" alt="Boutons Ajouter une section et Sauvegarder" style="display:block;margin:20px auto;max-width:70%;border-radius:10px;border:1px solid var(--border);">
+
+  <hr>
+
+  <!-- RÉORGANISER -->
+  <h2>Réorganiser les sections</h2>
+  <p>Les sections sont réorganisables par glisser-déposer (icône à gauche de chaque section). L'ordre dans le gabarit correspond à l'ordre dans la note générée.</p>
+
+  <img src="src/drag_drop.gif" alt="Réorganiser les sections par glisser-déposer" style="display:block;margin:20px auto;max-width:70%;border-radius:10px;border:1px solid var(--border);">
+
+  <hr>
+
+  <!-- DUPLIQUER -->
+  <h2>Dupliquer un gabarit</h2>
+  <p>Le bouton <img src="src/dupliquer_gabarit_bouton.png" alt="Dupliquer ce gabarit" style="height:28px;vertical-align:middle;border-radius:4px;"> en bas à gauche crée une copie identique. Utile pour :</p>  <ul class="plain">
+    <li>Tester des modifications sans affecter votre version en production</li>
+    <li>Créer des variantes pour différents contextes (ex. suivi court vs évaluation complète)</li>
+  </ul>
+
+  <div class="pnav">
+    <a href="configuration-section.html"><span class="nl">Précédent</span><span class="nt">← Configuration d'une section</span></a>
+    <a href="infos-supplementaires.html"><span class="nl">Suivant</span><span class="nt">Informations supplémentaires →</span></a>
+  </div>
+</main>
+</div>
+</body>
+</html>

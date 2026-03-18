@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informations supplémentaires — Plume IA</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+:root{--blue:#1B5EFF;--blue-l:#EEF3FF;--text:#0F1624;--text2:#4A5568;--muted:#8A96A8;--border:#E2E8F0;--bg:#fff;--sb:#F8FAFC;--tip:#F0F7FF;--warn:#FFF8EC;--warn-b:#F6A623;--sw:220px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;font-size:15px;color:var(--text);background:var(--bg);line-height:1.7;}
+.topnav{position:fixed;top:0;left:0;right:0;height:56px;background:#fff;border-bottom:1px solid var(--border);z-index:100;display:flex;align-items:center;}
+.topnav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1200px;margin:0 auto;padding:0 32px;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--text);text-decoration:none;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{font-size:13px;color:var(--text2);text-decoration:none;font-weight:500;letter-spacing:.03em;text-transform:uppercase;}
+.nav-links a:hover{color:var(--blue);}
+.btn-cx{background:var(--blue);color:#fff;border:none;padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;}
+.layout{display:flex;padding-top:56px;min-height:100vh;}
+.sidebar{width:var(--sw);position:fixed;top:56px;bottom:0;left:0;background:var(--bg);border-right:1px solid var(--border);overflow-y:auto;padding:24px 0;}
+.sb-cat{font-size:13px;font-weight:700;color:var(--text);padding:8px 20px 4px;margin-top:8px;}
+.sidebar a{display:block;padding:5px 20px 5px 24px;font-size:14px;color:var(--text2);text-decoration:none;border-left:2px solid transparent;transition:all .12s;}
+.sidebar a:hover{color:var(--blue);}
+.sidebar a.active{color:var(--blue);font-weight:600;border-left:2px solid var(--blue);}
+.sidebar a.sub{padding-left:36px;font-size:13.5px;}
+.main{margin-left:var(--sw);flex:1;padding:48px 72px;max-width:calc(var(--sw) + 760px + 144px);}
+.bc{font-size:13px;color:var(--muted);margin-bottom:28px;display:flex;gap:6px;}
+.bc a{color:var(--muted);text-decoration:none;}
+.bc a:hover{color:var(--blue);}
+h1{font-size:30px;font-weight:700;letter-spacing:-.02em;margin-bottom:6px;}
+.rule{border:none;border-top:2px solid var(--blue);margin:10px 0 22px;}
+h2{font-size:19px;font-weight:700;margin:36px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+h3{font-size:16px;font-weight:700;margin:22px 0 8px;}
+p{color:var(--text2);margin-bottom:14px;}
+hr{border:none;border-top:1px solid var(--border);margin:28px 0;}
+.tip{border-left:3px solid var(--blue);padding:12px 16px;margin:16px 0;font-size:14px;color:var(--text2);background:var(--tip);}
+.tip strong{color:var(--text);}
+.warn{border-left:3px solid var(--warn-b);padding:12px 16px;margin:16px 0;font-size:14px;color:var(--text2);background:var(--warn);}
+.warn strong{color:#92400E;}
+.code{background:var(--sb);border:1px solid var(--border);border-radius:6px;padding:12px 16px;margin:10px 0;font-family:'DM Mono',monospace;font-size:13px;color:var(--text2);line-height:1.7;}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+th{background:var(--sb);padding:10px 14px;text-align:left;font-weight:700;border:1px solid var(--border);color:var(--text);}
+td{padding:10px 14px;border:1px solid var(--border);color:var(--text2);vertical-align:top;}
+tr:hover td{background:#FAFBFD;}
+ul.plain{list-style:none;margin:10px 0;display:flex;flex-direction:column;gap:6px;}
+ul.plain li{display:flex;gap:8px;font-size:14px;color:var(--text2);}
+ul.plain li::before{content:"·";color:var(--blue);font-weight:700;flex-shrink:0;}
+.good{color:#166534;font-weight:600;}
+.bad{color:#991B1B;font-weight:600;}
+.pnav{display:flex;justify-content:space-between;margin-top:48px;padding-top:20px;border-top:1px solid var(--border);}
+.pnav a{color:var(--blue);text-decoration:none;font-size:14px;display:flex;flex-direction:column;gap:3px;}
+.pnav a:last-child{text-align:right;}
+.nl{font-size:12px;color:var(--muted);}
+.nt{font-weight:600;}
+@media(max-width:768px){.sidebar{display:none;}.main{margin-left:0;padding:24px 20px;}}
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a class="logo" href="index.html">Plume IA</a>
+    <div class="nav-links">
+      <a href="#">Accueil</a><a href="#">Confidentialité</a><a href="#">Ressources</a><a href="#">Tarifs</a><a href="#">Contact</a>
+    </div>
+    <button class="btn-cx">Connexion</button>
+  </div>
+</nav>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sb-cat">Premiers Pas</div>
+  <a href="#">Introduction</a>
+  <a href="#">Interface et navigation</a>
+  <a href="#">Faire sa première note</a>
+  <div class="sb-cat">Fonctionnalités</div>
+  <a href="#">Lexique</a>
+  <a href="#">Gabarits de notes</a>
+  <a href="index.html">Gabarits personnalisés</a>
+  <a href="creer-gabarit.html" class="sub">Créer un gabarit</a>
+  <a href="configuration-generale.html" class="sub">Configuration générale</a>
+  <a href="configuration-section.html" class="sub">Configuration d'une section</a>
+  <a href="gerer-gabarits.html" class="sub">Gérer vos gabarits</a>
+  <a href="infos-supplementaires.html" class="sub active">Informations supplémentaires</a>
+</aside>
+<main class="main">
+  <h1>Informations supplémentaires</h1>
+  <hr class="rule">
+  <p>Conseils pratiques, paramétrages avancés et erreurs fréquentes à éviter.</p>
+
+  <!-- CRÉER UN GABARIT — CONSEILS PAR OPTION -->
+  <h2>Conseils selon votre point de départ</h2>
+
+  <h3>Rechercher un gabarit existant</h3>
+  <p>Si vous ne trouvez pas le gabarit souhaité parmi la liste :</p>
+  <ul class="plain">
+    <li>Faites une recherche par profession, spécialité ou mot-clé.</li>
+  </ul>
+
+  <img src="src/recherche_gabarit_existant.gif" alt="Rechercher un gabarit existant" style="display:block;margin:20px auto;max-width:70%;border-radius:10px;border:1px solid var(--border);">
+
+  <h3>Générer depuis un exemple</h3>
+  <p>Si l'analyse de votre exemple donne des résultats décevants :</p>
+  <ul class="plain">
+    <li>Vérifiez que votre PDF est un document textuel et non une image scannée.</li>
+    <li>Plus votre exemple contient du contenu réel et détaillé, meilleure sera l'analyse. Un squelette vide donnera de moins bons résultats.</li>
+  </ul>
+
+  <div class="tip">
+    <strong>Rappel :</strong> Quel que soit le point de départ choisi, le gabarit généré est toujours entièrement modifiable : sections, ordre, contenu, format, etc.
+  </div>
+
+  <hr>
+
+  <!-- SECTIONS -->
+  <h2>Sections Plume IA vs sections personnalisées</h2>
+
+  <table>
+    <tr><th>Section Plume IA</th><th>Section personnalisée</th></tr>
+    <tr>
+      <td>Préconfigurée et optimisée. Le champ <strong>Contenu supplémentaire</strong> vous permet d'affiner sans repartir de zéro.</td>
+      <td>Entièrement vide. Le champ <strong>Contenu</strong> est indispensable. Sans directives, Plume ne sait pas ce que doit contenir la section.</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <!-- EXEMPLE FORMAT AVANCÉ -->
+  <h2>Techniques avancées pour le champ Exemple format</h2>
+
+  <h3>Technique 1 — Placeholders avec crochets [ ]</h3>
+  <p>Les crochets signalent à Plume IA où insérer les informations extraites de la transcription.</p>
+  <div class="code">
+    Date : [Date]<br>
+    Patient : [Nom] [Prénom]<br>
+    Âge : [X] ans<br>
+    Poids : [X] kg
+  </div>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:4px;">Résultat dans la note générée :</p>
+  <div class="code">
+    Date : 15 janvier 2026<br>
+    Patient : Tremblay Marie<br>
+    Âge : 45 ans<br>
+    Poids : 62 kg
+  </div>
+
+  <h3>Technique 2 — Choix multiples avec la barre oblique /</h3>
+  <p>Pour des évaluations avec options prédéfinies. Plume IA choisit l'option la plus appropriée selon la transcription.</p>
+  <div class="code">
+    Aspect physique : [Soigné/Négligé/Bien habillé]<br>
+    État général : [Bon/Moyen/Altéré]<br>
+    Coopération : [Excellente/Bonne/Difficile/Absente]
+  </div>
+  <div class="warn">
+    <strong>Attention :</strong> Ne mettez pas d'espaces autour du /. Écrivez <code>Bon/Moyen</code> et non <code>Bon / Moyen</code>.
+  </div>
+
+  <hr>
+
+  <!-- CONSEILS D'OPTIMISATION -->
+  <h2>Conseils d'optimisation</h2>
+
+  <h3>Ce qui fonctionne bien</h3>
+  <ul class="plain">
+    <li>Remplissez le champ Exemple format si vous avez un format précis en tête. C'est le moyen le plus efficace !</li>
+    <li>Soyez précis dans le champ Contenu. "Inclure les médicaments avec posologie et fréquence" donne de meilleurs résultats que "Inclure les médicaments".</li>
+    <li><span>Utilisez les <strong>Directives générales</strong> pour les règles transversales : ton, abréviations, terminologie préférée. Attention aux contradictions entre les instructions dans vos directives générales et celles de vos sections (contenu) !</span></li>    
+    <li>Pour les sections Plume IA, ajoutez seulement ce qui manque dans le <strong>Contenu supplémentaire.</strong> C'est déjà optimisé, profitez-en !</li>
+  </ul>
+
+  <div class="pnav">
+    <a href="gerer-gabarits.html"><span class="nl">Précédent</span><span class="nt">← Gérer vos gabarits</span></a>
+    <div></div>
+  </div>
+</main>
+</div>
+</body>
+</html>

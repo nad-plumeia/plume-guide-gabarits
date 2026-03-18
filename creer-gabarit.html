@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Créer un gabarit — Plume IA</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+:root{--blue:#1B5EFF;--blue-l:#EEF3FF;--text:#0F1624;--text2:#4A5568;--muted:#8A96A8;--border:#E2E8F0;--bg:#fff;--sb:#F8FAFC;--tip:#F0F7FF;--sw:220px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;font-size:15px;color:var(--text);background:var(--bg);line-height:1.7;}
+.topnav{position:fixed;top:0;left:0;right:0;height:56px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 32px;z-index:100;gap:32px;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--text);text-decoration:none;}
+.nav-links{display:flex;gap:24px;margin-left:auto;}
+.nav-links a{font-size:13px;color:var(--text2);text-decoration:none;font-weight:500;letter-spacing:.03em;text-transform:uppercase;}
+.nav-links a:hover{color:var(--blue);}
+.btn-cx{background:var(--blue);color:#fff;border:none;padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;margin-left:8px;}
+.layout{display:flex;padding-top:56px;min-height:100vh;}
+.sidebar{width:var(--sw);position:fixed;top:56px;bottom:0;left:0;background:var(--bg);border-right:1px solid var(--border);overflow-y:auto;padding:24px 0;}
+.sb-cat{font-size:13px;font-weight:700;color:var(--text);padding:8px 20px 4px;margin-top:8px;}
+.sidebar a{display:block;padding:5px 20px 5px 24px;font-size:14px;color:var(--text2);text-decoration:none;border-left:2px solid transparent;transition:all .12s;}
+.sidebar a:hover{color:var(--blue);}
+.sidebar a.active{color:var(--blue);font-weight:600;border-left:2px solid var(--blue);}
+.sidebar a.sub{padding-left:36px;font-size:13.5px;}
+.main{margin-left:var(--sw);flex:1;padding:48px 72px;max-width:calc(var(--sw) + 760px + 144px);}
+.bc{font-size:13px;color:var(--muted);margin-bottom:28px;display:flex;gap:6px;}
+.bc a{color:var(--muted);text-decoration:none;}
+.bc a:hover{color:var(--blue);}
+h1{font-size:30px;font-weight:700;letter-spacing:-.02em;margin-bottom:6px;}
+.rule{border:none;border-top:2px solid var(--blue);margin:10px 0 22px;}
+h2{font-size:19px;font-weight:700;margin:32px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+h3{font-size:16px;font-weight:700;margin:24px 0 8px;}
+p{color:var(--text2);margin-bottom:14px;}
+hr{border:none;border-top:1px solid var(--border);margin:28px 0;}
+.img-ph{background:var(--sb);border:1px dashed var(--border);border-radius:8px;padding:32px 24px;text-align:center;margin:20px 0;color:var(--muted);font-size:13px;}
+.img-ph strong{display:block;color:var(--text2);font-size:14px;margin-bottom:4px;}
+.gif-ph{background:var(--blue-l);border:1px dashed #9DB8FF;border-radius:8px;padding:32px 24px;text-align:center;margin:20px 0;color:var(--muted);font-size:13px;}
+.gif-ph strong{display:block;color:var(--blue);font-size:14px;margin-bottom:4px;}
+.tip{border-left:3px solid var(--blue);padding:12px 16px;margin:20px 0;font-size:14px;color:var(--text2);background:var(--tip);}
+.tip strong{color:var(--text);}
+.opts{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:20px 0;}
+.opt{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;gap:12px;}
+.opt:last-child{border-bottom:none;}
+.opt:hover{background:var(--sb);}
+.opt-n{font-size:15px;font-weight:700;color:var(--blue);min-width:22px;margin-top:1px;}
+.opt-t{font-weight:700;color:var(--text);margin-bottom:4px;}
+.opt-d{font-size:14px;color:var(--text2);}
+.pnav{display:flex;justify-content:space-between;margin-top:48px;padding-top:20px;border-top:1px solid var(--border);}
+.pnav a{color:var(--blue);text-decoration:none;font-size:14px;display:flex;flex-direction:column;gap:3px;}
+.pnav a:last-child{text-align:right;}
+.nl{font-size:12px;color:var(--muted);}
+.nt{font-weight:600;}
+@media(max-width:768px){.sidebar{display:none;}.main{margin-left:0;padding:24px 20px;}}
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a class="logo" href="index.html">Plume IA</a>
+  <div class="nav-links"><a href="#">Accueil</a><a href="#">Confidentialité</a><a href="#">Ressources</a><a href="#">Tarifs</a><a href="#">Contact</a></div>
+  <button class="btn-cx">Connexion</button>
+</nav>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sb-cat">Premiers Pas</div>
+  <a href="#">Introduction</a>
+  <a href="#">Interface et navigation</a>
+  <a href="#">Faire sa première note</a>
+  <div class="sb-cat">Fonctionnalités</div>
+  <a href="#">Lexique</a>
+  <a href="#">Gabarits de notes</a>
+  <a href="index.html">Gabarits personnalisés</a>
+  <a href="creer-gabarit.html" class="sub active">Créer un gabarit</a>
+  <a href="configuration-generale.html" class="sub">Configuration générale</a>
+  <a href="configuration-section.html" class="sub">Configuration d'une section</a>
+  <a href="gerer-gabarits.html" class="sub">Gérer vos gabarits</a>
+  <a href="infos-supplementaires.html" class="sub">Informations supplémentaires</a>
+</aside>
+<main class="main">
+  <h1>Créer un gabarit</h1>
+  <hr class="rule">
+  <p>Depuis la page <strong>Gabarits de notes</strong>, cliquez sur 
+  <img src="src/nouveau_gabarit_bouton.png" alt="+ Nouveau gabarit" style="height:28px;vertical-align:middle;border-radius:5px;"> 
+  en bas à gauche pour démarrer.</p>
+  <img src="src/creer_nouveau_gabarit_3.png" alt="Les 3 options de création de gabarit" style="display:block;margin:20px auto;max-width:60%;border-radius:10px;border:1px solid var(--border);">
+  
+  <h2>Les 3 façons de créer un gabarit</h2>
+
+  <div class="opts">
+    <div class="opt">
+      <div class="opt-n">1.</div>
+      <div>
+        <div class="opt-t">Utiliser un gabarit existant</div>
+        <div class="opt-d">Parcourez les gabarits de la communauté Plume IA et importez celui qui ressemble le plus à votre pratique. Modifiez-le ensuite à votre guise.</div>
+      </div>
+    </div>
+    <div class="opt">
+      <div class="opt-n">2.</div>
+      <div>
+        <div class="opt-t">Générer depuis un exemple</div>
+        <div class="opt-d">Collez une note exemple que vous avez déjà rédigée. Plume analyse la structure et génère automatiquement un gabarit correspondant.</div>
+      </div>
+    </div>
+    <div class="opt">
+      <div class="opt-n">3.</div>
+      <div>
+        <div class="opt-t">Partir d'un modèle vide</div>
+        <div class="opt-d">Construisez votre gabarit de zéro, section par section. Idéal si vous souhaitez une structure entièrement sur mesure.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>Conseil :</strong> L'option <strong>Générer depuis un exemple</strong> est particulièrement utile si vous avez déjà une note type que vous aimez. Plume IA s'en inspire pour créer la structure automatiquement.
+  </div>
+
+  <hr>
+
+  <h2>Utiliser votre gabarit</h2>
+  <p>Une fois créé, votre gabarit est accessible sur la page de génération de notes. Sélectionnez dans Spécialité, <strong>Mes gabarits</strong>, puis dans le menu <strong>Type de note</strong>, choisissez votre gabarit personnalisé voulu.</p>
+
+  <img src="src/mes_gabarits.gif" alt="Sélectionner son gabarit lors de la génération" style="display:block;margin:20px auto;max-width:60%;border-radius:10px;border:1px solid var(--border);">
+
+  <div class="pnav">
+    <a href="index.html"><span class="nl">Précédent</span><span class="nt">← Introduction</span></a>
+    <a href="configuration-generale.html"><span class="nl">Suivant</span><span class="nt">Configuration générale →</span></a>
+  </div>
+</main>
+</div>
+</body>
+</html>

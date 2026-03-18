@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configuration générale — Plume IA</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+:root{--blue:#1B5EFF;--blue-l:#EEF3FF;--text:#0F1624;--text2:#4A5568;--muted:#8A96A8;--border:#E2E8F0;--bg:#fff;--sb:#F8FAFC;--tip:#F0F7FF;--sw:220px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;font-size:15px;color:var(--text);background:var(--bg);line-height:1.7;}
+.topnav{position:fixed;top:0;left:0;right:0;height:56px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 32px;z-index:100;gap:32px;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--text);text-decoration:none;}
+.nav-links{display:flex;gap:24px;margin-left:auto;}
+.nav-links a{font-size:13px;color:var(--text2);text-decoration:none;font-weight:500;letter-spacing:.03em;text-transform:uppercase;}
+.nav-links a:hover{color:var(--blue);}
+.btn-cx{background:var(--blue);color:#fff;border:none;padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;margin-left:8px;}
+.layout{display:flex;padding-top:56px;min-height:100vh;}
+.sidebar{width:var(--sw);position:fixed;top:56px;bottom:0;left:0;background:var(--bg);border-right:1px solid var(--border);overflow-y:auto;padding:24px 0;}
+.sb-cat{font-size:13px;font-weight:700;color:var(--text);padding:8px 20px 4px;margin-top:8px;}
+.sidebar a{display:block;padding:5px 20px 5px 24px;font-size:14px;color:var(--text2);text-decoration:none;border-left:2px solid transparent;transition:all .12s;}
+.sidebar a:hover{color:var(--blue);}
+.sidebar a.active{color:var(--blue);font-weight:600;border-left:2px solid var(--blue);}
+.sidebar a.sub{padding-left:36px;font-size:13.5px;}
+.main{margin-left:var(--sw);flex:1;padding:48px 72px;max-width:calc(var(--sw) + 760px + 144px);}
+.bc{font-size:13px;color:var(--muted);margin-bottom:28px;display:flex;gap:6px;}
+.bc a{color:var(--muted);text-decoration:none;}
+.bc a:hover{color:var(--blue);}
+h1{font-size:30px;font-weight:700;letter-spacing:-.02em;margin-bottom:6px;}
+.rule{border:none;border-top:2px solid var(--blue);margin:10px 0 22px;}
+h2{font-size:19px;font-weight:700;margin:32px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+p{color:var(--text2);margin-bottom:14px;}
+.img-ph{background:var(--sb);border:1px dashed var(--border);border-radius:8px;padding:32px 24px;text-align:center;margin:20px 0;color:var(--muted);font-size:13px;}
+.img-ph strong{display:block;color:var(--text2);font-size:14px;margin-bottom:4px;}
+.tip{border-left:3px solid var(--blue);padding:12px 16px;margin:20px 0;font-size:14px;color:var(--text2);background:var(--tip);}
+.tip strong{color:var(--text);}
+.fields{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:20px 0;}
+.field{padding:16px 20px;border-bottom:1px solid var(--border);}
+.field:last-child{border-bottom:none;}
+.fn{font-weight:700;color:var(--text);margin-bottom:6px;font-size:15px;}
+.fd{font-size:14px;color:var(--text2);margin:0;}
+.ex{margin-top:10px;background:var(--sb);border-radius:5px;padding:10px 14px;}
+.ex-t{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em;}
+.ex-i{font-size:13px;color:var(--text2);font-family:'DM Mono',monospace;padding:2px 0;}
+.pnav{display:flex;justify-content:space-between;margin-top:48px;padding-top:20px;border-top:1px solid var(--border);}
+.pnav a{color:var(--blue);text-decoration:none;font-size:14px;display:flex;flex-direction:column;gap:3px;}
+.pnav a:last-child{text-align:right;}
+.nl{font-size:12px;color:var(--muted);}
+.nt{font-weight:600;}
+@media(max-width:768px){.sidebar{display:none;}.main{margin-left:0;padding:24px 20px;}}
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a class="logo" href="index.html">Plume IA</a>
+  <div class="nav-links"><a href="#">Accueil</a><a href="#">Confidentialité</a><a href="#">Ressources</a><a href="#">Tarifs</a><a href="#">Contact</a></div>
+  <button class="btn-cx">Connexion</button>
+</nav>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sb-cat">Premiers Pas</div>
+  <a href="#">Introduction</a>
+  <a href="#">Interface et navigation</a>
+  <a href="#">Faire sa première note</a>
+  <div class="sb-cat">Fonctionnalités</div>
+  <a href="#">Lexique</a>
+  <a href="#">Gabarits de notes</a>
+  <a href="index.html">Gabarits personnalisés</a>
+  <a href="creer-gabarit.html" class="sub">Créer un gabarit</a>
+  <a href="configuration-generale.html" class="sub active">Configuration générale</a>
+  <a href="configuration-section.html" class="sub">Configuration d'une section</a>
+  <a href="gerer-gabarits.html" class="sub">Gérer vos gabarits</a>
+  <a href="infos-supplementaires.html" class="sub">Informations supplémentaires</a>
+</aside>
+<main class="main">
+  <h1>Configuration générale</h1>
+  <hr class="rule">
+  <p>Les paramètres de base qui s'appliquent à l'ensemble de votre gabarit.</p>
+
+  <img src="src/entete_configuration_gabarit.png" alt="En-tête de configuration du gabarit" style="display:block;margin:20px auto;max-width:100%;border-radius:10px;border:1px solid var(--border);">
+
+  <div class="fields">
+    <div class="field">
+      <div class="fn">Titre du gabarit</div>
+      <p class="fd">Nom visible dans le menu <strong>Mes gabarits</strong> lors de la génération d'une note.</p>
+    </div>
+    <div class="field">
+      <div class="fn">Langue</div>
+      <p class="fd">Langue de rédaction de vos notes : <strong>Français</strong> ou <strong>Anglais</strong>.</p>
+    </div>
+    <div class="field">
+      <div class="fn">Visibilité</div>
+      <ul style="list-style:none;margin:0;display:flex;flex-direction:column;gap:4px;">
+        <li style="font-size:14px;color:var(--text2);display:flex;gap:8px;"><span style="color:var(--blue);font-weight:700;">·</span><span><strong>Privé :</strong> visible uniquement par vous.</span></li>
+        <li style="font-size:14px;color:var(--text2);display:flex;gap:8px;"><span style="color:var(--blue);font-weight:700;">·</span><span><strong>Public :</strong> partagé avec la communauté Plume IA.</span></li>
+      </ul>    
+    </div>
+    <div class="field">
+      <div class="fn">Directives générales</div>
+      <p class="fd">Instructions globales qui s'appliquent à <em>tout</em> le gabarit. Idéal pour définir le ton, la terminologie préférée ou des règles transversales.</p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>Bon à savoir :</strong> Les directives générales s'appliquent globalement à toute la note. Pour des instructions propres à une seule section, utilisez le champ <strong>Contenu</strong> de cette section spécifique.
+  </div>
+
+  <div class="pnav">
+    <a href="creer-gabarit.html"><span class="nl">Précédent</span><span class="nt">← Créer un gabarit</span></a>
+    <a href="configuration-section.html"><span class="nl">Suivant</span><span class="nt">Configuration d'une section →</span></a>
+  </div>
+</main>
+</div>
+</body>
+</html>
