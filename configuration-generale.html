@@ -23,25 +23,19 @@ body{font-family:'Inter',sans-serif;font-size:15px;color:var(--text);background:
 .sidebar a.active{color:var(--blue);font-weight:600;border-left:2px solid var(--blue);}
 .sidebar a.sub{padding-left:36px;font-size:13.5px;}
 .main{margin-left:var(--sw);flex:1;padding:48px 72px;max-width:calc(var(--sw) + 760px + 144px);}
-.bc{font-size:13px;color:var(--muted);margin-bottom:28px;display:flex;gap:6px;}
-.bc a{color:var(--muted);text-decoration:none;}
-.bc a:hover{color:var(--blue);}
 h1{font-size:30px;font-weight:700;letter-spacing:-.02em;margin-bottom:6px;}
 .rule{border:none;border-top:2px solid var(--blue);margin:10px 0 22px;}
 h2{font-size:19px;font-weight:700;margin:32px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
 p{color:var(--text2);margin-bottom:14px;}
-.img-ph{background:var(--sb);border:1px dashed var(--border);border-radius:8px;padding:32px 24px;text-align:center;margin:20px 0;color:var(--muted);font-size:13px;}
-.img-ph strong{display:block;color:var(--text2);font-size:14px;margin-bottom:4px;}
 .tip{border-left:3px solid var(--blue);padding:12px 16px;margin:20px 0;font-size:14px;color:var(--text2);background:var(--tip);}
 .tip strong{color:var(--text);}
-.fields{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:20px 0;}
-.field{padding:16px 20px;border-bottom:1px solid var(--border);}
-.field:last-child{border-bottom:none;}
-.fn{font-weight:700;color:var(--text);margin-bottom:6px;font-size:15px;}
-.fd{font-size:14px;color:var(--text2);margin:0;}
-.ex{margin-top:10px;background:var(--sb);border-radius:5px;padding:10px 14px;}
-.ex-t{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em;}
-.ex-i{font-size:13px;color:var(--text2);font-family:'DM Mono',monospace;padding:2px 0;}
+.opts{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:20px 0;}
+.opt{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;gap:12px;}
+.opt:last-child{border-bottom:none;}
+.opt:hover{background:var(--sb);}
+.opt-n{font-size:15px;font-weight:700;color:var(--blue);min-width:22px;margin-top:1px;}
+.opt-t{font-weight:700;color:var(--text);margin-bottom:4px;}
+.opt-d{font-size:14px;color:var(--text2);}
 .pnav{display:flex;justify-content:space-between;margin-top:48px;padding-top:20px;border-top:1px solid var(--border);}
 .pnav a{color:var(--blue);text-decoration:none;font-size:14px;display:flex;flex-direction:column;gap:3px;}
 .pnav a:last-child{text-align:right;}
@@ -71,6 +65,7 @@ p{color:var(--text2);margin-bottom:14px;}
   <a href="configuration-section.html" class="sub">Configuration d'une section</a>
   <a href="gerer-gabarits.html" class="sub">Gérer vos gabarits</a>
   <a href="infos-supplementaires.html" class="sub">Informations supplémentaires</a>
+  <a href="exemples-video.html" class="sub">Exemples vidéo</a>
 </aside>
 <main class="main">
   <h1>Configuration générale</h1>
@@ -79,25 +74,37 @@ p{color:var(--text2);margin-bottom:14px;}
 
   <img src="src/entete_configuration_gabarit.png" alt="En-tête de configuration du gabarit" style="display:block;margin:20px auto;max-width:100%;border-radius:10px;border:1px solid var(--border);">
 
-  <div class="fields">
-    <div class="field">
-      <div class="fn">Titre du gabarit</div>
-      <p class="fd">Nom visible dans le menu <strong>Mes gabarits</strong> lors de la génération d'une note.</p>
+  <div class="opts">
+    <div class="opt">
+      <div class="opt-n">1.</div>
+      <div>
+        <div class="opt-t">Titre du gabarit</div>
+        <div class="opt-d">Nom visible dans le menu <strong>Mes gabarits</strong> lors de la génération d'une note.</div>
+      </div>
     </div>
-    <div class="field">
-      <div class="fn">Langue</div>
-      <p class="fd">Langue de rédaction de vos notes : <strong>Français</strong> ou <strong>Anglais</strong>.</p>
+    <div class="opt">
+      <div class="opt-n">2.</div>
+      <div>
+        <div class="opt-t">Langue</div>
+        <div class="opt-d">Langue de rédaction de vos notes : <strong>Français</strong> ou <strong>Anglais</strong>.</div>
+      </div>
     </div>
-    <div class="field">
-      <div class="fn">Visibilité</div>
-      <ul style="list-style:none;margin:0;display:flex;flex-direction:column;gap:4px;">
-        <li style="font-size:14px;color:var(--text2);display:flex;gap:8px;"><span style="color:var(--blue);font-weight:700;">·</span><span><strong>Privé :</strong> visible uniquement par vous.</span></li>
-        <li style="font-size:14px;color:var(--text2);display:flex;gap:8px;"><span style="color:var(--blue);font-weight:700;">·</span><span><strong>Public :</strong> partagé avec la communauté Plume IA.</span></li>
-      </ul>    
+  <div class="opt">
+    <div class="opt-n">3.</div>
+    <div>
+      <div class="opt-t">Visibilité</div>
+      <div class="opt-d">
+        <div style="display:flex;gap:8px;margin-bottom:4px;"><span style="color:var(--blue);font-weight:700;">·</span><span><strong>Privé :</strong> visible uniquement par vous.</span></div>
+        <div style="display:flex;gap:8px;"><span style="color:var(--blue);font-weight:700;">·</span><span><strong>Public :</strong> partagé avec la communauté Plume IA.</span></div>
+      </div>
     </div>
-    <div class="field">
-      <div class="fn">Directives générales</div>
-      <p class="fd">Instructions globales qui s'appliquent à <em>tout</em> le gabarit. Idéal pour définir le ton, la terminologie préférée ou des règles transversales.</p>
+  </div>
+    <div class="opt">
+      <div class="opt-n">4.</div>
+      <div>
+        <div class="opt-t">Directives générales</div>
+        <div class="opt-d">Instructions globales qui s'appliquent à <em>tout</em> le gabarit. Idéal pour définir le ton, la terminologie préférée ou des règles transversales.</div>
+      </div>
     </div>
   </div>
 

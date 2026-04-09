@@ -9,13 +9,12 @@
 :root{--blue:#1B5EFF;--blue-l:#EEF3FF;--text:#0F1624;--text2:#4A5568;--muted:#8A96A8;--border:#E2E8F0;--bg:#fff;--sb:#F8FAFC;--tip:#F0F7FF;--warn:#FFF8EC;--warn-b:#F6A623;--sw:220px;}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Inter',sans-serif;font-size:15px;color:var(--text);background:var(--bg);line-height:1.7;}
-.topnav{position:fixed;top:0;left:0;right:0;height:56px;background:#fff;border-bottom:1px solid var(--border);z-index:100;display:flex;align-items:center;}
-.topnav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1200px;margin:0 auto;padding:0 32px;}
+.topnav{position:fixed;top:0;left:0;right:0;height:56px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 32px;z-index:100;gap:32px;}
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--text);text-decoration:none;}
-.nav-links{display:flex;gap:24px;}
+.nav-links{display:flex;gap:24px;margin-left:auto;}
 .nav-links a{font-size:13px;color:var(--text2);text-decoration:none;font-weight:500;letter-spacing:.03em;text-transform:uppercase;}
 .nav-links a:hover{color:var(--blue);}
-.btn-cx{background:var(--blue);color:#fff;border:none;padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;}
+.btn-cx{background:var(--blue);color:#fff;border:none;padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;margin-left:8px;}
 .layout{display:flex;padding-top:56px;min-height:100vh;}
 .sidebar{width:var(--sw);position:fixed;top:56px;bottom:0;left:0;background:var(--bg);border-right:1px solid var(--border);overflow-y:auto;padding:24px 0;}
 .sb-cat{font-size:13px;font-weight:700;color:var(--text);padding:8px 20px 4px;margin-top:8px;}
@@ -57,13 +56,9 @@ ul.plain li::before{content:"·";color:var(--blue);font-weight:700;flex-shrink:0
 </head>
 <body>
 <nav class="topnav">
-  <div class="topnav-inner">
-    <a class="logo" href="index.html">Plume IA</a>
-    <div class="nav-links">
-      <a href="#">Accueil</a><a href="#">Confidentialité</a><a href="#">Ressources</a><a href="#">Tarifs</a><a href="#">Contact</a>
-    </div>
-    <button class="btn-cx">Connexion</button>
-  </div>
+  <a class="logo" href="index.html">Plume IA</a>
+  <div class="nav-links"><a href="#">Accueil</a><a href="#">Confidentialité</a><a href="#">Ressources</a><a href="#">Tarifs</a><a href="#">Contact</a></div>
+  <button class="btn-cx">Connexion</button>
 </nav>
 <div class="layout">
 <aside class="sidebar">
@@ -80,6 +75,7 @@ ul.plain li::before{content:"·";color:var(--blue);font-weight:700;flex-shrink:0
   <a href="configuration-section.html" class="sub">Configuration d'une section</a>
   <a href="gerer-gabarits.html" class="sub">Gérer vos gabarits</a>
   <a href="infos-supplementaires.html" class="sub active">Informations supplémentaires</a>
+  <a href="exemples-video.html" class="sub">Exemples vidéo</a>
 </aside>
 <main class="main">
   <h1>Informations supplémentaires</h1>
@@ -121,6 +117,7 @@ ul.plain li::before{content:"·";color:var(--blue);font-weight:700;flex-shrink:0
     </tr>
   </table>
   <img src="src/sectionPlume_VS_perso.gif" alt="Section Plume IA vs section personnalisée" style="display:block;margin:20px auto;max-width:70%;border-radius:10px;border:1px solid var(--border);">
+
   <hr>
 
   <!-- EXEMPLE FORMAT AVANCÉ -->
@@ -162,13 +159,13 @@ ul.plain li::before{content:"·";color:var(--blue);font-weight:700;flex-shrink:0
   <ul class="plain">
     <li>Remplissez le champ Exemple format si vous avez un format précis en tête. C'est le moyen le plus efficace !</li>
     <li>Soyez précis dans le champ Contenu. "Inclure les médicaments avec posologie et fréquence" donne de meilleurs résultats que "Inclure les médicaments".</li>
-    <li><span>Utilisez les <strong>Directives générales</strong> pour les règles transversales : ton, abréviations, terminologie préférée. Attention aux contradictions entre les instructions dans vos directives générales et celles de vos sections (contenu) !</span></li>    
+    <li><span>Utilisez les <strong>Directives générales</strong> pour les règles transversales : ton, abréviations, terminologie préférée. Attention aux contradictions entre les instructions dans vos directives générales et celles de vos sections (contenu) !</span></li>
     <li>Pour les sections Plume IA, ajoutez seulement ce qui manque dans le <strong>Contenu supplémentaire.</strong> C'est déjà optimisé, profitez-en !</li>
   </ul>
 
   <div class="pnav">
     <a href="gerer-gabarits.html"><span class="nl">Précédent</span><span class="nt">← Gérer vos gabarits</span></a>
-    <div></div>
+    <a href="exemples-video.html"><span class="nl">Suivant</span><span class="nt">Exemples vidéo →</span></a>
   </div>
 </main>
 </div>
